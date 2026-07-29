@@ -1,0 +1,37 @@
+
+
+
+degree = int(input("Enter the degree of the polynomial: "))
+
+print("Enter the coefficients of the first polynomial:")
+poly1 = []
+for i in range(degree + 1):
+    coeff = int(input(f"Coefficient of x^{degree - i}: "))
+    poly1.append(coeff)
+
+print("Enter the coefficients of the second polynomial:")
+poly2 = []
+for i in range(degree + 1):
+    coeff = int(input(f"Coefficient of x^{degree - i}: "))
+    poly2.append(coeff)
+
+result = []
+for i in range(degree + 1):
+    result.append(poly1[i] + poly2[i])
+
+
+print("\nResultant Polynomial:")
+for i in range(degree + 1):
+    power = degree - i
+    if result[i] != 0:
+        if power > 1:
+            print(f"{result[i]}x^{power}", end=" ")
+        elif power == 1:
+            print(f"{result[i]}x", end=" ")
+        else:
+            print(f"{result[i]}", end=" ")
+
+        if i != degree:
+            print("+", end=" ")
+
+print()
